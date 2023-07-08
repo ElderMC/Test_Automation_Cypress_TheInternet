@@ -7,7 +7,7 @@
     "test": "npx cypress open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Elder Cordeiro",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.17.0"
