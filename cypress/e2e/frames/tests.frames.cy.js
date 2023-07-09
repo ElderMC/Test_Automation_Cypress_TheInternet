@@ -14,7 +14,7 @@ describe('frame test suite', () => {
 
     })
 
-    it('test loading frame', () => {
+    it('test loading frame - log element', () => {
         cy.frameLoaded('frame[src="/frame_top"]')
         cy.iframe('frame[src="/frame_top"]')
         .should('exist')
