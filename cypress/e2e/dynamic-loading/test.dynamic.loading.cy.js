@@ -1,7 +1,7 @@
 describe('screen element loading test', () => {
 
     beforeEach(() => {
-        cy.visit('https://the-internet.herokuapp.com/dynamic_loading/2');
+        cy.visit(Cypress.env('urlDynamic'));
     })
 
     it('screen element validation test waiting for loading', () => {
