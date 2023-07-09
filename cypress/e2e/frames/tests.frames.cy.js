@@ -2,8 +2,8 @@
 
 describe('frame test suite', () => {
 
-    beforeEach(( )=> {
-        cy.visit('https://the-internet.herokuapp.com/nested_frames');
+    beforeEach(() => {
+        cy.visit(Cypress.env('urlFrame'));
     })
 
     it('test loading frame', () => {
@@ -11,21 +11,25 @@ describe('frame test suite', () => {
         cy.iframe('frame[src="/frame_top"]')
             .find('frame[src="/frame_middle"]')
             .should('exist')
-            
+
     })
 
-    it.only('test loading frame', () => {
-        cy.frameLoaded('[src="/frame_top"]')
+    it('test loading frame', () => {
+        cy.frameLoaded('frame[src="/frame_top"]')
+        cy.iframe('frame[src="/frame_top"]')
         .should('exist')
-        .then(() => {
-            cy.iframe('[src="/frame_top"]')
-            .find('[src="/frame_middle"]')
+        .find('frame[src="/frame_middle"]')
+        .then(frameMiddle => {
+            cy.wrap(frameMiddle.contents())
+            .find('#content')
             .should('exist')
-            .then(() => {
-                cy.enter('[src="/frame_middle"]').get('#content').find('div').should('exist')
+            .contains('MIDDLE')
+            .invoke('text')
+            .then(text => {
+                cy.log(text)
             })
         })
     })
-               
-});
+})
+
 
