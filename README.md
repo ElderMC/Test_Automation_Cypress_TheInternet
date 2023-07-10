@@ -1,5 +1,3 @@
-# Título: Test_Automation_Cypress_TheInternet
-
 ## Descrição
 O projeto contém algumas suites de testes automatizados em Cypress para validação de algumas funcionalidades do site [The Internet](https://the-internet.herokuapp.com/). Sendo elas:
 
@@ -19,7 +17,6 @@ Também é necessário ter instalado o Node Packge Maneger, para verificar se j�
 
 npm -v
 
-
 Caso necessário, os downloads podem ser realizados através das seguintes URLs:
 
 - [Node](https://nodejs.org/en)
@@ -31,11 +28,11 @@ Com o projeto aberto na IDE, basta utilizar os comandos a seguir no terminal, pa
 
 Para abrir a interface gráfica do Cypress, rode no terminal o comando:
 
-npx cypress open
+npm run test-interface
 
 Para rodar os testes através do terminal, utilize o comando:
 
-npx cypress run
+npm test
 
 ## Verificação dos Reports
 
@@ -44,5 +41,3 @@ Ao rodar um teste, automaticamente será gerado um report em HTML e JSON, conten
 O report pode ser acessado na pasta "cypress\reports\html" dentro do projeto.
 
 **Importante**: A cada nova execução de teste, os arquivos da pasta são apagados e reinseridos conforme resultado no novo teste.
-
-
